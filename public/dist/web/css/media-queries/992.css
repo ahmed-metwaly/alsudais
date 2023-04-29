@@ -1,0 +1,16 @@
+@media (min-width: 991.98px) {
+
+    header nav {
+        width: 200px;
+        background: #fff;
+        position: fixed;
+        right: -200px;
+        height: 100%;
+        top: 0;
+        transition: all 0.5s ease-in-out;
+        padding-top: 50px;
+        z-index: 99999;
+        scroll-behavior: unset;
+    }
+
+}

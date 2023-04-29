@@ -1,0 +1,29 @@
+User-agent: *
+Disallow: /cpa-dashboard/
+
+User-agent: All
+Allow: /
+
+User-agent: Googlebot
+Allow: /*
+
+User-agent: Googlebot-Image
+Allow: /*
+
+User-agent: Mediapartners-Google
+Allow: /*
+
+User-agent: Googlebot-Mobile
+Allow: /*
+
+User-agent: Googlebot-Video
+Allow: /*
+
+User-agent: ia_archiver-web.archive.org
+Disallow: /
+
+User-agent: duggmirror
+Disallow: /
+
+Sitemap: https://alsudaiscpa.com/public/sitemap.xml
+
