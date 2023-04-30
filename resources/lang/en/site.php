@@ -4,7 +4,7 @@ return [
 
     'site_name' => 'Alsudais Chartered Accountants , Riyadh &amp; Khobar - Alsudais Chartered Accountants , Riyadh &amp; Khobar      Alsudais Chartered Accountants , Riyadh &amp; Khobar',
     'lang_name_ar' => 'العربية',
-    'lang_name_en' => 'English',
+    'lang_name_en' => 'EN',
     'emmpluee' => 'Employment',
     'contact' => 'Contact us',
     'service' => 'Our services',
@@ -13,7 +13,8 @@ return [
     'how_are' => 'About us',
     'about_footer' => 'About us',
     'footer_links' => 'Useful Links',
-    'copyright' => 'All Rights Reserved © Alsudais Chartered Accountants , Riyadh & Khobar 2021',
+    'copy' => 'Copyright',
+    'copyright' => 'All Rights Reserved © Alsudais Chartered Accountants , Riyadh & Khobar 2023',
     'ws4it' => 'Developed by ',
     'name' => 'Name',
     'email' => 'Email',
@@ -34,7 +35,7 @@ return [
     'price_end' => 'You can send a request for a quote or request for the required service, and one of our team members will contact you .',
     "col_now" => 'Call now',
     "menu" => "Menu",
-
-
+    "lang" => 'ar',
+    "show_service" => 'Show Service',
 
 ];

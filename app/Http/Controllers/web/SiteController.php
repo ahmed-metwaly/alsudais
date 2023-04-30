@@ -8,7 +8,7 @@ use App\Mail\CpaMail;
 use App\Models\Services;
 use App\Models\Clients as Client;
 use Illuminate\Http\Request;
-use App\Models\Slider;
+use App\Models\Settings;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
@@ -18,10 +18,7 @@ class SiteController extends Controller
 {
     public function index()
     {
-
-        $slider = Slider::where('status', 1)->where('lang', app()->getLocale())->get();
-
-        return view('web.index', compact('slider'));
+        return view('web.index');
     }
 
 
@@ -49,7 +46,7 @@ class SiteController extends Controller
     public function servece()
     {
 
-        $data = Services::where('lang', app()->getLocale())->where('status', 1)->select('name', 'photo')->get();
+        $data = Services::where('lang', app()->getLocale())->where('status', 1)->select('name', 'photo', 'text')->get();
 
         return view('web.servece', compact('data'));
     }
@@ -210,7 +207,7 @@ class SiteController extends Controller
         $data['message'] = $request->message;
 
 
-// quote@alsudaiscpa.com
+        // quote@alsudaiscpa.com
         Mail::to('quote@alsudaiscpa.com')->send(new CpaMail($data));
 
         return redirect()->back()->with('mOk', __('site.send_email_ok'));

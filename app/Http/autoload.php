@@ -6,6 +6,7 @@ use App\Models\About;
 use App\Models\Services;
 use Illuminate\Support\Facades\Mail;
 use App\Models\Partner;
+use App\Models\Branches;
 
 function setting()
 {
@@ -18,9 +19,14 @@ function about()
     return About::where('lang', app()->getLocale())->first();
 }
 
+function branches()
+{
+    return Branches::where('lang', app()->getLocale())->first();
+}
+
 function services()
 {
-    return Services::where('lang', app()->getLocale())->where('status', 1)->select('relate', 'name')->get();
+    return Services::where('lang', app()->getLocale())->where('status', 1)->select('name', 'text', 'photo')->limit(4)->get();
 }
 
 function partners()

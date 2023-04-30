@@ -5,40 +5,40 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="{{ url('public/dist/web') }}/images/islamiat.ico">
+        <link rel="shortcut icon" href="<?php echo e(url('public/dist/web')); ?>/images/islamiat.ico">
 
-        <title> @lang('site.site_name') </title>
+        <title> <?php echo app('translator')->get('site.site_name'); ?> </title>
 
 
         <!-- This site is optimized with the Yoast SEO plugin v13.5 - https://yoast.com/wordpress/plugins/seo/ -->
         <meta name="description" content="مكتب محاسبه قانوني للتدقيق وخدمات الزكاة والضريبة" />
         <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-        <link rel="canonical" href="{{ url('/') }}" />
+        <link rel="canonical" href="<?php echo e(url('/')); ?>" />
         <meta property="og:locale" content="ar_AR" />
         <meta property="og:type" content="website" />
         <meta property="og:title"
             content="مكتب السديس محاسب قانوني ، الرياض ، الخبر - مكتب محاسبه قانوني للتدقيق وخدمات الزكاة والضريبة" />
         <meta property="og:description" content="مكتب محاسبه قانوني للتدقيق وخدمات الزكاة والضريبة" />
-        <meta property="og:url" content="{{ url('/') }}" />
+        <meta property="og:url" content="<?php echo e(url('/')); ?>" />
         <meta property="og:site_name" content="مكتب السديس محاسب قانوني ، الرياض ، الخبر" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:description" content="مكتب محاسبه قانوني للتدقيق وخدمات الزكاة والضريبة">
         <meta name="twitter:title"
             content="مكتب السديس محاسب قانوني ، الرياض ، الخبر - مكتب محاسبه قانوني للتدقيق وخدمات الزكاة والضريبة">
-        <link rel='stylesheet' id='bootstrap_css-css' href='{{ url('public/dist/web') }}/css/bootstrap.min.css'
+        <link rel='stylesheet' id='bootstrap_css-css' href='<?php echo e(url('public/dist/web')); ?>/css/bootstrap.min.css'
             type='text/css' />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
-        <link rel='stylesheet' href='{{ url('public/dist/web') }}/css/style.css' type='text/css'>
+        <link rel='stylesheet' href='<?php echo e(url('public/dist/web')); ?>/css/style.css' type='text/css'>
 
-        @if (app()->getLocale() == 'en')
-            <link rel='stylesheet' id='lang-style-css' href='{{ url('public/dist/web') }}/css/style-en.css'
+        <?php if(app()->getLocale() == 'en'): ?>
+            <link rel='stylesheet' id='lang-style-css' href='<?php echo e(url('public/dist/web')); ?>/css/style-en.css'
                 type='text/css'>
-        @endif
+        <?php endif; ?>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     </head>
 
-    <body dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
+    <body dir="<?php echo e(app()->getLocale() == 'ar' ? 'rtl' : 'ltr'); ?>">
 
 
         <div class="overlay"></div>
@@ -51,22 +51,22 @@
                 <nav>
                     <ul>
                         <li>
-                            <a class="" href="{{ route('home') }}">@lang('site.home')</a>
+                            <a class="" href="<?php echo e(route('home')); ?>"><?php echo app('translator')->get('site.home'); ?></a>
                         </li>
-                        <li class=""><a href="{{ route('servece') }}">@lang('site.service')</a>
+                        <li class=""><a href="<?php echo e(route('servece')); ?>"><?php echo app('translator')->get('site.service'); ?></a>
                         </li>
-                        <li class=""><a href="{{ route('price') }}">@lang('site.price')</a></li>
+                        <li class=""><a href="<?php echo e(route('price')); ?>"><?php echo app('translator')->get('site.price'); ?></a></li>
 
-                        <li class=""><a href="{{ route('team') }}">@lang('site.team')</a></li>
+                        <li class=""><a href="<?php echo e(route('team')); ?>"><?php echo app('translator')->get('site.team'); ?></a></li>
 
-                        <li class=""><a href="{{ route('emmpluee') }}">@lang('site.emmpluee')</a>
+                        <li class=""><a href="<?php echo e(route('emmpluee')); ?>"><?php echo app('translator')->get('site.emmpluee'); ?></a>
                         </li>
 
-                        <li class=""><a href="{{ route('how-are') }}">@lang('site.how_are')</a></li>
+                        <li class=""><a href="<?php echo e(route('how-are')); ?>"><?php echo app('translator')->get('site.how_are'); ?></a></li>
 
-                        <li class=""><a href="{{ route('contact') }}">@lang('site.contact')</a></li>
+                        <li class=""><a href="<?php echo e(route('contact')); ?>"><?php echo app('translator')->get('site.contact'); ?></a></li>
 
-                        <li class=""><a href="{{ route('lang', trans('site.lang')) }}">@lang('site.lang_name_' . trans('site.lang'))</a></li>
+                        <li class=""><a href="<?php echo e(route('lang', trans('site.lang'))); ?>"><?php echo app('translator')->get('site.lang_name_' . trans('site.lang')); ?></a></li>
                     </ul>
                 </nav>
 
@@ -78,21 +78,21 @@
                     <div class="row">
                         <div class="col-sm-3">
                             <div class="logo">
-                                <a href="{{ url('/') }}">
-                                    @if (app()->getLocale() == 'ar')
+                                <a href="<?php echo e(url('/')); ?>">
+                                    <?php if(app()->getLocale() == 'ar'): ?>
                                         <img class="img-responsive"
-                                            src="{{ url('public/dist/web/images') }}/log-ar.jpeg"
-                                            alt="@lang('site.site_name') ">
-                                    @else
+                                            src="<?php echo e(url('public/dist/web/images')); ?>/log-ar.jpeg"
+                                            alt="<?php echo app('translator')->get('site.site_name'); ?> ">
+                                    <?php else: ?>
                                         <img class="img-responsive"
-                                            src="{{ url('public/dist/web/images') }}/log-en.jpeg"
-                                            alt="@lang('site.site_name') ">
-                                    @endif
+                                            src="<?php echo e(url('public/dist/web/images')); ?>/log-en.jpeg"
+                                            alt="<?php echo app('translator')->get('site.site_name'); ?> ">
+                                    <?php endif; ?>
                                 </a>
                             </div>
                         </div>
                         <div class="col-sm-9 hidden-xs hidden-lg header-side-nav">
-                            <a class="side-nav {{ app()->getLocale() == 'ar' ? 'pull-left' : 'pull-right' }}">
+                            <a class="side-nav <?php echo e(app()->getLocale() == 'ar' ? 'pull-left' : 'pull-right'); ?>">
                                 <i class=" fa fa-bars " aria-hidden="true" style="display: block;"></i>
                             </a>
                         </div>
@@ -113,38 +113,38 @@
                                     <div class="nav navbar-nav">
                                         <ul>
                                             <li
-                                                class="nav {{ \Request::route()->getName() == 'home' ? 'active' : '' }}">
-                                                <a class="" href="{{ route('home') }}">@lang('site.home')</a>
+                                                class="nav <?php echo e(\Request::route()->getName() == 'home' ? 'active' : ''); ?>">
+                                                <a class="" href="<?php echo e(route('home')); ?>"><?php echo app('translator')->get('site.home'); ?></a>
                                             </li>
                                             <li
-                                                class="{{ \Request::route()->getName() == 'servece' ? 'active' : '' }}">
-                                                <a href="{{ route('servece') }}">@lang('site.service')</a>
+                                                class="<?php echo e(\Request::route()->getName() == 'servece' ? 'active' : ''); ?>">
+                                                <a href="<?php echo e(route('servece')); ?>"><?php echo app('translator')->get('site.service'); ?></a>
                                             </li>
-                                            <li class="{{ \Request::route()->getName() == 'price' ? 'active' : '' }}">
-                                                <a href="{{ route('price') }}">@lang('site.price')</a>
-                                            </li>
-
-                                            <li class="{{ \Request::route()->getName() == 'team' ? 'active' : '' }}">
-                                                <a href="{{ route('team') }}">@lang('site.team')</a>
+                                            <li class="<?php echo e(\Request::route()->getName() == 'price' ? 'active' : ''); ?>">
+                                                <a href="<?php echo e(route('price')); ?>"><?php echo app('translator')->get('site.price'); ?></a>
                                             </li>
 
-                                            <li
-                                                class="{{ \Request::route()->getName() == 'emmpluee' ? 'active' : '' }}">
-                                                <a href="{{ route('emmpluee') }}">@lang('site.emmpluee')</a>
+                                            <li class="<?php echo e(\Request::route()->getName() == 'team' ? 'active' : ''); ?>">
+                                                <a href="<?php echo e(route('team')); ?>"><?php echo app('translator')->get('site.team'); ?></a>
                                             </li>
 
                                             <li
-                                                class="{{ \Request::route()->getName() == 'how-are' ? 'active' : '' }}">
-                                                <a href="{{ route('how-are') }}">@lang('site.how_are')</a>
+                                                class="<?php echo e(\Request::route()->getName() == 'emmpluee' ? 'active' : ''); ?>">
+                                                <a href="<?php echo e(route('emmpluee')); ?>"><?php echo app('translator')->get('site.emmpluee'); ?></a>
                                             </li>
 
                                             <li
-                                                class="{{ \Request::route()->getName() == 'contact' ? 'active' : '' }}">
-                                                <a href="{{ route('contact') }}">@lang('site.contact')</a>
+                                                class="<?php echo e(\Request::route()->getName() == 'how-are' ? 'active' : ''); ?>">
+                                                <a href="<?php echo e(route('how-are')); ?>"><?php echo app('translator')->get('site.how_are'); ?></a>
+                                            </li>
+
+                                            <li
+                                                class="<?php echo e(\Request::route()->getName() == 'contact' ? 'active' : ''); ?>">
+                                                <a href="<?php echo e(route('contact')); ?>"><?php echo app('translator')->get('site.contact'); ?></a>
                                             </li>
 
                                             <li class=""><a
-                                                    href="{{ route('lang', trans('site.lang')) }}">@lang('site.lang_name_' . trans('site.lang'))</a>
+                                                    href="<?php echo e(route('lang', trans('site.lang'))); ?>"><?php echo app('translator')->get('site.lang_name_' . trans('site.lang')); ?></a>
                                             </li>
 
 
@@ -160,7 +160,7 @@
             </div>
         </header>
 
-        @yield('content')
+        <?php echo $__env->yieldContent('content'); ?>
 
         <div class="footer-bg hidden-xs">
             <div class="bg"></div>
@@ -177,7 +177,7 @@
 
                 <div class="col-sm-4">
                     <div class="title-back">
-                        <span class="mini-title2">@lang('site.contact_us')</span>
+                        <span class="mini-title2"><?php echo app('translator')->get('site.contact_us'); ?></span>
                     </div>
 
                     <ul class="footer-nav">
@@ -186,20 +186,20 @@
                                 <i class="fa fa-whatsapp"></i>
                             </span>
                             <a target="_blanck"
-                                href="https://wa.me/{{ setting()->whatsapp }}">{{ setting()->whatsapp }}</a>
+                                href="https://wa.me/<?php echo e(setting()->whatsapp); ?>"><?php echo e(setting()->whatsapp); ?></a>
                         </li>
                         <li>
                             <span>
                                 <i class="fa fa-envelope-o"></i>
                             </span>
-                            <a href="mailto:{{ setting()->email }}">{{ setting()->email }}</a>
+                            <a href="mailto:<?php echo e(setting()->email); ?>"><?php echo e(setting()->email); ?></a>
                         </li>
 
                         <li>
                             <span>
                                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                             </span>
-                            <p>{{ branches()->address }}</p>
+                            <p><?php echo e(branches()->address); ?></p>
                         </li>
 
                     </ul>
@@ -208,24 +208,24 @@
 
                 <div class="col-sm-4">
                     <div class="title-back">
-                        <span class="mini-title2">@lang('site.footer_links')</span>
+                        <span class="mini-title2"><?php echo app('translator')->get('site.footer_links'); ?></span>
 
                     </div>
                     <div class="footer-nav">
                         <ul>
                             <li class="page_item page-item-45"><a
-                                    href="{{ route('emmpluee') }}">@lang('site.emmpluee')</a>
+                                    href="<?php echo e(route('emmpluee')); ?>"><?php echo app('translator')->get('site.emmpluee'); ?></a>
                             </li>
 
                             <li class="page_item page-item-16"><a
-                                    href="{{ route('contact') }}">@lang('site.contact')</a>
+                                    href="<?php echo e(route('contact')); ?>"><?php echo app('translator')->get('site.contact'); ?></a>
                             </li>
                             <li class="page_item page-item-14"><a
-                                    href="{{ route('servece') }}">@lang('site.service')</a>
+                                    href="<?php echo e(route('servece')); ?>"><?php echo app('translator')->get('site.service'); ?></a>
                             </li>
-                            <li class="page_item page-item-39"><a href="{{ route('price') }}">@lang('site.price')</a>
+                            <li class="page_item page-item-39"><a href="<?php echo e(route('price')); ?>"><?php echo app('translator')->get('site.price'); ?></a>
                             </li>
-                            <li class="page_item page-item-88"><a href="{{ route('team') }}">@lang('site.team')</a>
+                            <li class="page_item page-item-88"><a href="<?php echo e(route('team')); ?>"><?php echo app('translator')->get('site.team'); ?></a>
                             </li>
 
                         </ul>
@@ -235,15 +235,15 @@
 
                 <div class="col-sm-4">
                     <div class="title-back">
-                        <span class="mini-title2">@lang('site.copy')</span>
+                        <span class="mini-title2"><?php echo app('translator')->get('site.copy'); ?></span>
 
                     </div>
                     <div class="footer-nav">
                         <ul>
                             <li>
-                                <h4>@lang('site.copyright')</h4>
+                                <h4><?php echo app('translator')->get('site.copyright'); ?></h4>
                                 <br>
-                                <img src="{{ url('public/dist/web/images/metwaly.dev.png') }}" alt="">
+                                <img src="<?php echo e(url('public/dist/web/images/metwaly.dev.png')); ?>" alt="">
                             </li>
                         </ul>
                     </div>
@@ -256,38 +256,38 @@
 
         </footer>
 
-        {{-- moble menu --}}
+        
         <div class="fixed-footer hidden-lg hidden-md hidden-sm">
             <ul>
                 <li>
-                    <a class="" href="{{ route('home') }}"> <i class="fa fa-home"></i> @lang('site.home')</a>
+                    <a class="" href="<?php echo e(route('home')); ?>"> <i class="fa fa-home"></i> <?php echo app('translator')->get('site.home'); ?></a>
                 </li>
                 <li>
-                    <a href="{{ route('price') }}"> <i class="far fa-clipboard"></i> @lang('site.price')</a>
+                    <a href="<?php echo e(route('price')); ?>"> <i class="far fa-clipboard"></i> <?php echo app('translator')->get('site.price'); ?></a>
                 </li>
                 <li>
-                    <a href="{{ route('contact') }}"> <i class="fa fa-phone"></i> @lang('site.contact')</a>
+                    <a href="<?php echo e(route('contact')); ?>"> <i class="fa fa-phone"></i> <?php echo app('translator')->get('site.contact'); ?></a>
                 </li>
 
                 <li>
                     <a class="side-nav">
                         <i class=" fa fa-bars " aria-hidden="true" style="display: block;"></i>
-                        <span>@lang('site.menu')</span>
+                        <span><?php echo app('translator')->get('site.menu'); ?></span>
                     </a>
                 </li>
             </ul>
         </div>
 
-        <a href="https://wa.me/{{ setting()->whatsapp }}" class="float" target="_blank">
+        <a href="https://wa.me/<?php echo e(setting()->whatsapp); ?>" class="float" target="_blank">
             <i class="fa fa-whatsapp my-float"></i>
         </a>
 
         </div> <!-- /container -->
 
-        <script type='text/javascript' src='{{ url('public/dist/web') }}/js/jquery.js'></script>
-        {{-- <script type='text/javascript' src='{{ url("public/dist/web") }}/js/jquery-migrate.min.js'></script> --}}
-        <script type='text/javascript' src='{{ url('public/dist/web') }}/js/bootstrap.min.js'></script>
-        <script type='text/javascript' src='{{ url('public/dist/web') }}/js/main.js'></script>
+        <script type='text/javascript' src='<?php echo e(url('public/dist/web')); ?>/js/jquery.js'></script>
+        
+        <script type='text/javascript' src='<?php echo e(url('public/dist/web')); ?>/js/bootstrap.min.js'></script>
+        <script type='text/javascript' src='<?php echo e(url('public/dist/web')); ?>/js/main.js'></script>
 
         <script src="https://kit.fontawesome.com/3f450c5001.js" crossorigin="anonymous"></script>
 
@@ -344,3 +344,4 @@
     </body>
 
     </html>
+<?php /**PATH /Applications/MAMP/htdocs/alsudais/resources/views/web/master.blade.php ENDPATH**/ ?>
